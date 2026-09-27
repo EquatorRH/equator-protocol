@@ -1,0 +1,40 @@
+/* Equator design tokens. The ONLY file allowed to contain colour literals.
+
+   PALETTE PROVENANCE (sampled from real assets; replaces the achromatic placeholder)
+   Method: pooled k-means, k=8, seed 0, over opaque pixels of brand/LOGO EQUATOR PNG...png and
+   reference/EQUATOR 1-6.jpg.jpeg (6000 pixels per image). Each centroid is snapped to the nearest
+   real pixel of its cluster; the source pixel is listed as file @(x,y).
+     #14281d  EQUATOR 1.jpg.jpeg @(306,683)    71.1%  background field
+     #b6e0b7  LOGO EQUATOR PNG...png @(836,1387) 14.7%  logo mark
+     #1b3729  EQUATOR 1.jpg.jpeg @(1575,724)    6.5%  raised panel
+     #e1f4f2  EQUATOR 1.jpg.jpeg @(245,348)     2.3%  headline text
+     #88d6a4  EQUATOR 3.jpg.jpeg @(1203,242)    2.2%  bright green accent
+     #7bbc92  EQUATOR 6.jpg.jpeg @(1322,469)    1.7%  mid green
+     #29503e  EQUATOR 2.jpg.jpeg @(1407,701)    1.0%  deep green panel
+   (#558b6b @ EQUATOR 6.jpg.jpeg (1184,560), 0.4%, sampled but unused.)
+   --line and --line-strong are --ink (#e1f4f2) with alpha 1f / 42; alpha is a design choice, hue is sampled.
+   Regenerate the list with: python scripts/sample-brand.py palette */
+:root {
+  color-scheme: dark;
+
+  --bg: #14281d;
+  --surface: #1b3729;
+  --surface-2: #29503e;
+  --line: #e1f4f21f;
+  --line-strong: #e1f4f242;
+  --ink: #e1f4f2;
+  --brand: #b6e0b7;
+  --ink-2: var(--brand);
+  --muted: #7bbc92;
+  --accent: #88d6a4;
+
+  --font-display: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --t-fast: 160ms;
+  --t-mid: 360ms;
+  --t-slow: 800ms;
+  --max: 1240px;
+}

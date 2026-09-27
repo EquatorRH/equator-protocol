@@ -1,0 +1,13 @@
+{
+  "chain": {
+    "state": "stated",
+    "name": "Robinhood Chain",
+    "id": 4663,
+    "idHex": "0x1237",
+    "rpc": "https://rpc.mainnet.chain.robinhood.com",
+    "source": "client statement 2026-09-02 batch-level"
+  },
+  "ca": { "state": "absent", "value": null, "source": null },
+  "x": { "state": "absent", "url": null, "source": null },
+  "github": { "state": "absent", "url": null, "source": null }
+}

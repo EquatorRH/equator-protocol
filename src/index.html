@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="{{THEME}}">
+<title>Equator — a clear line across Robinhood Chain</title>
+<meta name="description" content="Equator publishes what is confirmed and marks everything else as pending. Live Robinhood Chain readings, straight from the network.">
+<link rel="canonical" href="https://equator.digital/">
+<link rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:title" content="Equator">
+<meta property="og:description" content="A clear line across Robinhood Chain.">
+<meta property="og:url" content="https://equator.digital/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://equator.digital/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://equator.digital/og.jpg">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="/app.css">
+<script type="application/json" id="register">{{REGISTER_JSON}}</script>
+<script type="module" src="/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top" id="top" data-intro style="--i:0">
+  <div class="top__bar">
+    <a class="brand" href="#horizon" aria-label="Equator, back to the top">
+      <img class="brand__mark" src="/logo-mark.png" width="34" height="29" alt="" decoding="async">
+      <span class="brand__name">Equator</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#network">Network</a>
+      <a href="#contract">Contract</a>
+      <a href="#register">Register</a>
+    </nav>
+    <div class="socials">
+      {{X}}
+      {{GITHUB}}
+    </div>
+  </div>
+  <div class="top__ca">
+    {{CA}}
+  </div>
+</header>
+
+<main id="main">
+  <section class="scene scene--hero" id="horizon" data-scene data-label="The horizon">
+    <div class="globe" aria-hidden="true" data-intro style="--i:5">
+      <div class="globe__disc"></div>
+      <div class="globe__rig">
+        <i class="lat" style="--s:.866;--y:.25"></i>
+        <i class="lat" style="--s:.866;--y:-.25"></i>
+        <i class="lat" style="--s:.5;--y:.433"></i>
+        <i class="lat" style="--s:.5;--y:-.433"></i>
+        <i class="mer" style="--d:0"></i><i class="mer" style="--d:1"></i><i class="mer" style="--d:2"></i>
+        <i class="mer" style="--d:3"></i><i class="mer" style="--d:4"></i><i class="mer" style="--d:5"></i>
+        <div class="eq"><i class="eq__ring"></i><i class="eq__spin"><b class="eq__dot"></b></i></div>
+      </div>
+    </div>
+    <div class="wrap hero">
+      <h1 class="hero__title">
+        <span class="line" data-intro style="--i:1">A clear line across</span>
+        <span class="line" data-intro style="--i:2">Robinhood Chain</span>
+      </h1>
+      <p class="hero__lede" data-intro style="--i:3">Equator publishes what is confirmed and marks everything else as pending. The readings below come live from the network.</p>
+      <div class="hero__cta" data-intro style="--i:4">
+        <a class="btn btn--solid" href="#network">Read the network <span aria-hidden="true">→</span></a>
+        <a class="btn" href="#register">How we publish</a>
+      </div>
+      <dl class="stats" data-intro style="--i:6">
+        <div class="stat"><dt>Latest block</dt><dd><span class="val" data-bind="block">—</span></dd></div>
+        <div class="stat"><dt>Gas price</dt><dd><span class="val" data-bind="gasPrice">—</span></dd></div>
+        <div class="stat"><dt>Chain TVL</dt><dd><span class="val" data-bind="tvl">—</span></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="scene" id="network" data-scene data-label="The network">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal style="--i:0">01 / The network</p>
+      <h2 class="title" data-reveal style="--i:1">Read the chain,<br>as it is right now</h2>
+      <p class="lede" data-reveal style="--i:2">Straight from the public Robinhood Chain RPC and DefiLlama. Nothing is estimated. When a reading is unavailable it shows —.</p>
+      <div class="grid">
+        <article class="cell" data-reveal style="--i:3"><h3>Block number</h3><p class="cell__v"><span class="val" data-bind="block">—</span></p></article>
+        <article class="cell" data-reveal style="--i:4"><h3>Block age</h3><p class="cell__v"><span class="val" data-bind="blockAge">—</span></p></article>
+        <article class="cell" data-reveal style="--i:5"><h3>Gas price</h3><p class="cell__v"><span class="val" data-bind="gasPrice">—</span></p></article>
+        <article class="cell" data-reveal style="--i:6"><h3>Base fee</h3><p class="cell__v"><span class="val" data-bind="baseFee">—</span></p></article>
+        <article class="cell" data-reveal style="--i:7"><h3>Gas used, latest block</h3><p class="cell__v"><span class="val" data-bind="gasUsed">—</span></p></article>
+        <article class="cell" data-reveal style="--i:8"><h3>Chain ID</h3><p class="cell__v"><span class="val" data-bind="chainId">—</span></p></article>
+        <article class="cell cell--wide" data-reveal style="--i:9"><h3>Chain TVL</h3><p class="cell__v"><span class="val" data-bind="tvl">—</span></p><p class="cell__note">DefiLlama, refreshed every 10 minutes</p></article>
+      </div>
+      <p class="status" data-reveal style="--i:10"><i class="status__dot" aria-hidden="true"></i><span data-bind="status">Connecting</span><span class="sep" aria-hidden="true">·</span>updated <span data-bind="updated">—</span><span class="sep" aria-hidden="true">·</span>RPC every 15 s</p>
+    </div>
+  </section>
+
+  <section class="scene" id="contract" data-scene data-label="The contract">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow" data-reveal style="--i:0">02 / The contract</p>
+        <h2 class="title" data-reveal style="--i:1">One address,<br>published once</h2>
+        <p class="lede" data-reveal style="--i:2">{{CANOTE}}</p>
+      </div>
+      <aside class="card" data-reveal style="--i:3" aria-label="Network details">
+        <h3 class="card__h">Network details</h3>
+        <dl class="kv">
+          <div><dt>Network</dt><dd>Robinhood Chain</dd></div>
+          <div><dt>Chain ID</dt><dd>4663 <span class="dim">(0x1237)</span></dd></div>
+          <div><dt>RPC</dt><dd class="mono brk">rpc.mainnet.chain.robinhood.com</dd></div>
+        </dl>
+        <p class="fine">Connecting a wallet is never required here. This site does not request signatures.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="scene" id="register" data-scene data-label="The register">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal style="--i:0">03 / The register</p>
+      <h2 class="title" data-reveal style="--i:1">Every fact carries<br>its own state</h2>
+      <p class="lede" data-reveal style="--i:2">A fact is either stated, not yet stated, or unconfirmed. Links only exist for facts that have been stated.</p>
+      <ul class="reg">
+        {{REGISTER}}
+      </ul>
+    </div>
+  </section>
+
+  <section class="scene scene--end" id="next" data-scene data-label="Next chapter">
+    <div class="wrap end">
+      <p class="eyebrow" data-reveal style="--i:0">04 / Next</p>
+      <h2 class="title" data-reveal style="--i:1">Nothing is asserted<br>before it is confirmed</h2>
+      <p class="lede" data-reveal style="--i:2">When the contract address and channels are stated, this page updates and they become live. Not financial advice.</p>
+      <div class="hero__cta" data-reveal style="--i:3">
+        <a class="btn btn--solid" href="#horizon">Back to the horizon <span aria-hidden="true">↑</span></a>
+      </div>
+      <footer class="foot" data-reveal style="--i:4">
+        <span>© Equator</span><span class="sep" aria-hidden="true">·</span><span>equator.digital</span>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<div class="rail" data-intro style="--i:7">
+  <p class="rail__count" aria-live="polite"><span data-rail-i>01</span><span class="dim"> / 05</span><span class="rail__label" data-rail-label>The horizon</span></p>
+  <div class="rail__btns">
+    <button type="button" class="rail__btn" data-rail="prev" aria-label="Previous section"><span aria-hidden="true">↑</span></button>
+    <button type="button" class="rail__btn" data-rail="next" aria-label="Next section"><span aria-hidden="true">↓</span></button>
+  </div>
+</div>
+</body>
+</html>
